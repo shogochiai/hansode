@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'sorcery'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +21,18 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'colorize_unpermitted_parameters'
+  gem 'rspec-rails'
+  gem 'quiet_assets'
+end
+
+group :production do
+  gem 'unicorn'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
