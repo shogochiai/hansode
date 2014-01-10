@@ -1,4 +1,6 @@
 Hansode::Application.routes.draw do
+  resources :clients
+
   root to: 'dashboard#index'
 
   resources :estimates
