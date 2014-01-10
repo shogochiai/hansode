@@ -1,4 +1,6 @@
 Hansode::Application.routes.draw do
+  resources :contacts
+
   resources :clients
 
   root to: 'dashboard#index'
