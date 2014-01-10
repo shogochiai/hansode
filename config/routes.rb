@@ -1,5 +1,5 @@
 Hansode::Application.routes.draw do
-  root to: 'estimates#index'
+  root to: 'dashboard#index'
 
   resources :estimates
 
