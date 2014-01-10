@@ -9,6 +9,11 @@ class Hansode::FormBuilder < ActionView::Helpers::FormBuilder
     RUBY_EVAL
   end
 
+  def select(method, choices, options = {}, html_options = {})
+    control = super(method, choices, options.except(:label), html_options.merge(class: 'form-control'))
+    @template.content_tag(:div, _label_by_options(method, options) + control, class: 'form-group')
+  end
+
   def submit(value=nil, options={})
     super(value, { class: 'btn btn-primary' }.merge(options))
   end
