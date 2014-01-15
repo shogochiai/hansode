@@ -1,11 +1,10 @@
 Hansode::Application.routes.draw do
-  resources :contacts
-
-  resources :clients
 
   root to: 'dashboard#index'
 
   resources :estimates
+  resources :contacts
+  resources :clients
 
   #
   # Authentication Routes
