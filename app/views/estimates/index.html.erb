@@ -1,6 +1,6 @@
 <h1>Listing estimates</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Title</th>
     <th>Body</th>
@@ -17,8 +17,8 @@
   <tr>
     <td><%= estimate.title %></td>
     <td><%= estimate.body %></td>
-    <td><%= estimate.author_id %></td>
-    <td><%= estimate.client_id %></td>
+    <td><%= estimate.author.email %></td>
+    <td><%= link_to estimate.client.name, client_path(estimate.client) %></td>
     <td><%= estimate.published_date %></td>
     <td><%= estimate.expiration_date %></td>
     <td><%= link_to 'Show', estimate %></td>
