@@ -10,7 +10,8 @@ Hansode::Application.routes.draw do
   # Authentication Routes
   #
   get 'logout' => 'sessions#destroy', as: :logout
-  match 'login' => 'sessions#create', as: :login, via: %w[get post]
+  get 'login' => 'sessions#new', as: :login
+  post 'login' => 'sessions#create'
   get 'signup' => 'users#new', as: :signup
   post 'signup' => 'users#create'
 end

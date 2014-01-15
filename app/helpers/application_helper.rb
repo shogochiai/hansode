@@ -1,6 +1,11 @@
 module ApplicationHelper
   def alert_class(name)
-    name = 'warning' if name.to_s == 'notice'
+    case name.to_s
+    when 'notice'
+      name = 'warning'
+    when 'invalid'
+      name = 'danger'
+    end
     "alert-#{name}"
   end
 end
