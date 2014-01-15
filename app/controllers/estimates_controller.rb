@@ -1,4 +1,6 @@
 class EstimatesController < ApplicationController
+  before_filter :set_estimate, only: %w[show edit update destroy]
+
   # GET /estimates
   # GET /estimates.json
   def index
@@ -13,8 +15,6 @@ class EstimatesController < ApplicationController
   # GET /estimates/1
   # GET /estimates/1.json
   def show
-    @estimate = Estimate.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @estimate }
@@ -34,13 +34,12 @@ class EstimatesController < ApplicationController
 
   # GET /estimates/1/edit
   def edit
-    @estimate = Estimate.find(params[:id])
   end
 
   # POST /estimates
   # POST /estimates.json
   def create
-    @estimate = Estimate.new(params[:estimate])
+    @estimate = Estimate.new(estimate_params)
 
     respond_to do |format|
       if @estimate.save
@@ -56,10 +55,8 @@ class EstimatesController < ApplicationController
   # PUT /estimates/1
   # PUT /estimates/1.json
   def update
-    @estimate = Estimate.find(params[:id])
-
     respond_to do |format|
-      if @estimate.update_attributes(params[:estimate])
+      if @estimate.update_attributes(estimate_params)
         format.html { redirect_to @estimate, notice: 'Estimate was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,7 +69,6 @@ class EstimatesController < ApplicationController
   # DELETE /estimates/1
   # DELETE /estimates/1.json
   def destroy
-    @estimate = Estimate.find(params[:id])
     @estimate.destroy
 
     respond_to do |format|
@@ -80,4 +76,13 @@ class EstimatesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+    def estimate_params
+      params.require(:estimate).permit(:title, :body, :author_id, :client_id, :published_date, :expiration_date)
+    end
+
+    def set_estimate
+      @estimate = Estimate.find(params[:id])
+    end
 end
