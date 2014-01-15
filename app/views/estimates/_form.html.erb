@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :client_id %><br />
-    <%= f.number_field :client_id %>
+    <%= f.select :client_id, Client.for_select_tag, { include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :published_date %><br />
