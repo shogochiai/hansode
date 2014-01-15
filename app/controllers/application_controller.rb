@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   protected
     def not_authenticated
-      redirect_to root_path, :alert => "Please login first."
+      redirect_to root_path, :notice => "Please login first."
     end
 end

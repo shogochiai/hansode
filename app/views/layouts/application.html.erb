@@ -50,6 +50,12 @@
     </header>
 
     <div class="container">
+      <% flash.each do |name, message| %>
+        <%= content_tag :div, content_tag(:strong, name.capitalize) + ': ' + message, class: "alert #{alert_class(name)}" %>
+      <% end %>
+    </div>
+
+    <div class="container">
       <%= yield %>
     </div>
 
