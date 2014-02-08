@@ -1,0 +1,33 @@
+<h1>Listing estimate_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estimate</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Order</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estimate_items.each do |estimate_item| %>
+      <tr>
+        <td><%= estimate_item.estimate_id %></td>
+        <td><%= estimate_item.title %></td>
+        <td><%= estimate_item.price %></td>
+        <td><%= estimate_item.order %></td>
+        <td><%= link_to 'Show', estimate_item %></td>
+        <td><%= link_to 'Edit', edit_estimate_item_path(estimate_item) %></td>
+        <td><%= link_to 'Destroy', estimate_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estimate item', new_estimate_item_path %>

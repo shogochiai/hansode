@@ -8,7 +8,8 @@ gem 'rails', '4.0.2'
 gem 'mysql2'
 gem 'sorcery'
 gem 'therubyracer'
-gem 'angular-rails'
+gem 'angularjs-rails'
+gem 'jbuilder'
 
 # Gems used only for assets and not required
 # in production environments by default.

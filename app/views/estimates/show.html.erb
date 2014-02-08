@@ -1,35 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @estimate.title %>
-</p>
+<h1><%= @estimate.title %></h1>
 
-<p>
-  <b>Body:</b>
-  <%= @estimate.body %>
-</p>
+<p><%= @estimate.body %></p>
 
-<p>
-  <b>Author:</b>
-  <%= @estimate.author_id %>
-</p>
+<div ng-controller="EstimateItemsController" ng-init="init(<%= @estimate.id %>)">
+  <ol class="estimate-items">
+    <li ng-repeat="item in items">
+      <input type="text" class="title"
+        ng-model="item.title" ng-change="update($event, item)" ng-keydown="keydown($event, $index)">
+      <input type="text" class="price"
+        ng-model="item.price" ng-change="update($event, item)" ng-keydown="keydown($event, $index)">
+    </li>
+    <li class="btn btn-success btn-block add" ng-click="add($event)">Add</li>
+  </ol>
+</div>
 
-<p>
-  <b>Client:</b>
-  <%= @estimate.client_id %>
-</p>
-
-<p>
-  <b>Published date:</b>
-  <%= @estimate.published_date %>
-</p>
-
-<p>
-  <b>Expiration date:</b>
-  <%= @estimate.expiration_date %>
-</p>
-
-
-<%= link_to 'Edit', edit_estimate_path(@estimate) %> |
-<%= link_to 'Back', estimates_path %>
+<%= link_to 'Edit', edit_estimate_path(@estimate), class: 'btn btn-default' %>
+<%= link_to 'Back', estimates_path, class: 'btn btn-default' %>

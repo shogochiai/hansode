@@ -1,8 +1,9 @@
 Hansode::Application.routes.draw do
 
   root to: 'dashboard#index'
-
-  resources :estimates
+  resources :estimates do
+    resources :items, controller: :estimate_items
+  end
   resources :contacts
   resources :clients
 

@@ -12,6 +12,36 @@
  *= require bootstrap/bootstrap.less
  */
 
+.estimate-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 5px 0;
+    margin-bottom: 5px;
+    border-bottom: solid 1px #cccccc;
+
+    input {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+    }
+
+    input.title {
+      width: 70%;
+    }
+
+    .price {
+      display: block;
+      float: right;
+      text-align: right;
+      width: 30%;
+    }
+  }
+}
+
 footer {
 	border-top: solid 1px #dddddd;
 	margin-top: 80px;
