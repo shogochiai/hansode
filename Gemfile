@@ -37,6 +37,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :production do
