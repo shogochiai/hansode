@@ -5,6 +5,6 @@ class Estimate < ActiveRecord::Base
   validates :title, :body, :author, :client, presence: true
 
   def total
-    500
+    items.inject(0) { |total, item| total += item.price }
   end
 end
