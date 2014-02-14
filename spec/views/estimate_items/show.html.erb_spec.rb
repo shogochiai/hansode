@@ -11,6 +11,7 @@ describe "estimate_items/show" do
   end
 
   it "renders attributes in <p>" do
+    pending "Do it later!"
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/1/)
