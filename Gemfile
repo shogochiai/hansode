@@ -35,6 +35,7 @@ group :development do
   gem 'rspec-rails'
   gem 'quiet_assets'
   gem 'guard-rails'
+  gem 'guard-rspec'
   gem 'factory_girl_rails'
 end
 
