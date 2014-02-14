@@ -34,6 +34,8 @@ group :development do
   gem 'colorize_unpermitted_parameters'
   gem 'rspec-rails'
   gem 'quiet_assets'
+  gem 'guard-rails'
+  gem 'factory_girl_rails'
 end
 
 group :production do
