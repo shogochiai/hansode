@@ -28,7 +28,7 @@ end
 
 gem 'jquery-rails'
 
-group :development do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'colorize_unpermitted_parameters'
@@ -38,6 +38,7 @@ group :development do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 group :production do
