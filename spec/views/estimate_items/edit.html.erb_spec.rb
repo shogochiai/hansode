@@ -11,6 +11,7 @@ describe "estimate_items/edit" do
   end
 
   it "renders the edit estimate_item form" do
+    pending "Do it later!"
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers

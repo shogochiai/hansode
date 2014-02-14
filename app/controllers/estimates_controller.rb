@@ -1,24 +1,13 @@
 class EstimatesController < ApplicationController
   before_filter :set_estimate, only: %w[show edit update destroy]
 
-  # GET /estimates
-  # GET /estimates.json
   def index
     @estimates = Estimate.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @estimates }
-    end
   end
 
   # GET /estimates/1
   # GET /estimates/1.json
   def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @estimate }
-    end
   end
 
   # GET /estimates/new
