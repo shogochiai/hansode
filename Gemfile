@@ -41,6 +41,10 @@ group :development, :test do
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
+group :development, :test do
+  gem 'spring'
+end
+
 group :production do
   gem 'unicorn'
 end
