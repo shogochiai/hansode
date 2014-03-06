@@ -50,3 +50,17 @@ ja:
       - :year
       - :month
       - :day
+  activerecord:
+    errors:
+      messages:
+        taken: はすでに存在します
+        record_invalid: バリデーションに失敗しました
+      models:
+        user:
+          attributes:
+            email: メール
+            password:
+              blank: パスワードを入力してください
+              too_short: パスワードが短すぎます
+            password_confirmation:
+              confirmation: パスワードを確認してください

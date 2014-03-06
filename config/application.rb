@@ -25,5 +25,6 @@ module Hansode
     I18n.enforce_available_locales = false
     config.i18n.default_locale = :ja
     config.autoload_paths += Dir["#{config.root}/lib/**/*"]
+    config.secret_key_base = 'secret'
   end
 end
