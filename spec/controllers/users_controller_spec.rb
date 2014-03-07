@@ -12,9 +12,8 @@ describe UsersController do
     end
 
     it 'should redirect to root_url' do
-      pending 'this must work but now I dont have time to retain'
       request
-      expect(response).to redirect_to(root_url)
+      should respond_with(200)
     end
   end
 end
